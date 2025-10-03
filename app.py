@@ -20,3 +20,10 @@ def home():  # Define a view function for the route
     # 127.0.0.1 is localhost
     # 5000 is port number
     # to stop the server ctrl + c
+@app.route("/about")  # Define a route for /about  # Running on http://127.0.0.1:5000/about
+def about():
+    return "this is about"
+
+@app.route("/contact")  # Define a route for /contact  # Running on http://127.0.0.1:5000/contact
+def contact():
+    return "this is contact"
