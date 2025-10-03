@@ -1,4 +1,4 @@
-from flask import Flask  #  import Flask
+from flask import Flask, request  #  import Flask
 
 app = Flask(__name__)  # Create a Flask application instance
 # creat an object of Flask class
@@ -27,3 +27,11 @@ def about():
 @app.route("/contact")  # Define a route for /contact  # Running on http://127.0.0.1:5000/contact
 def contact():
     return "this is contact"
+
+
+@app.route("/submit",methods =["GET","POST"])
+def submit():
+    if request.method == "POST":
+        return "You send the data"
+    else:
+        return "You are only viewing the form"
